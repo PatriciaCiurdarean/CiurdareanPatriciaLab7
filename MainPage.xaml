@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CiurdareanPatriciaLab7.MainPage"
+             Title="Home">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="25">
+
+            <Image
+                Source="zak.jpg"
+                HeightRequest="260"
+                Aspect="AspectFill"
+                SemanticProperties.Description="Zakynthos coast" />
+
+            <Label
+                Text="Zakynthos, Greece"
+                FontSize="26"
+                HorizontalOptions="Center"
+                TextColor="Black" />
+
+            <Label
+                Text="A beautiful place that inspires me to stay organized — even on vacation. This app helps me keep track of everything I need, whether I'm at home or traveling."
+                FontSize="18"
+                HorizontalOptions="Center"
+                TextColor="Black"
+                HorizontalTextAlignment="Center"
+                Margin="10,0" />
+
+            <!-- Invisible button required for MainPage.xaml.cs -->
+            <Button
+                x:Name="CounterBtn"
+                Text=""
+                HeightRequest="1"
+                WidthRequest="1"
+                Opacity="0"
+                Clicked="OnCounterClicked" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
