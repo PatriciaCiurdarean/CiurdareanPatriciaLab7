@@ -8,26 +8,25 @@
         <VerticalStackLayout Padding="20" Spacing="25">
 
             <Image
-                Source="zak.jpg"
+                Source="patricia.jpeg"
                 HeightRequest="260"
-                Aspect="AspectFill"
-                SemanticProperties.Description="Zakynthos coast" />
+                Aspect="AspectFit"
+                SemanticProperties.Description="Profile picture" />
 
             <Label
-                Text="Zakynthos, Greece"
+                Text="Hello, my name is Patricia!"
                 FontSize="26"
                 HorizontalOptions="Center"
                 TextColor="Black" />
 
             <Label
-                Text="A beautiful place that inspires me to stay organized — even on vacation. This app helps me keep track of everything I need, whether I'm at home or traveling."
+                Text="This is my first page."
                 FontSize="18"
                 HorizontalOptions="Center"
                 TextColor="Black"
                 HorizontalTextAlignment="Center"
                 Margin="10,0" />
 
-            <!-- Invisible button required for MainPage.xaml.cs -->
             <Button
                 x:Name="CounterBtn"
                 Text=""
