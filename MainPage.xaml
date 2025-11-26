@@ -14,7 +14,7 @@
                 SemanticProperties.Description="Profile picture" />
 
             <Label
-                Text="Hello, my name is Patricia!"
+                Text="Hello, I´m Patricia!"
                 FontSize="26"
                 HorizontalOptions="Center"
                 TextColor="Black" />
