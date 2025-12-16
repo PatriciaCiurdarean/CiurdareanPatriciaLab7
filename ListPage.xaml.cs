@@ -13,7 +13,8 @@ namespace CiurdareanPatriciaLab7
         {
             var slist = (ShopList)BindingContext;
             slist.Date = DateTime.UtcNow;
-
+            Shop selectedShop = (ShopPicker.SelectedItem as Shop);
+            slist.ShopID = selectedShop.ID;
             await App.Database.SaveShopListAsync(slist);
             await Navigation.PopAsync();
         }
@@ -50,6 +51,10 @@ namespace CiurdareanPatriciaLab7
         protected override async void OnAppearing()
         {
             base.OnAppearing();
+            var items = await App.Database.GetShopsAsync();
+
+            ShopPicker.ItemsSource = (System.Collections.IList)items;
+            ShopPicker.ItemDisplayBinding = new Binding("ShopDetails");
 
             var shopl = (ShopList)BindingContext;
 
