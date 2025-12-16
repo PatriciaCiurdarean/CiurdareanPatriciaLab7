@@ -25,5 +25,35 @@ namespace CiurdareanPatriciaLab7
             await App.Database.DeleteShopListAsync(slist);
             await Navigation.PopAsync();
         }
+        async void OnChooseButtonClicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(
+                new ProductPage((ShopList)this.BindingContext)
+                {
+                    BindingContext = new Product()
+                }
+            );
+        }
+        async void OnDeleteItemButtonClicked(object sender, EventArgs e)
+        {
+            if (listView.SelectedItem == null)
+                return;
+
+            var product = listView.SelectedItem as Product;
+            var shopl = (ShopList)BindingContext;
+
+            await App.Database.DeleteListProductAsync(shopl.ID, product.ID);
+
+            listView.ItemsSource = await App.Database.GetListProductsAsync(shopl.ID);
+        }
+
+        protected override async void OnAppearing()
+        {
+            base.OnAppearing();
+
+            var shopl = (ShopList)BindingContext;
+
+            listView.ItemsSource = await App.Database.GetListProductsAsync(shopl.ID);
+        }
     }
 }
